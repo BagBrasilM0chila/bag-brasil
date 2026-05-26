@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BAG BRASIL</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#fff;
+    overflow-x:hidden;
+}
+
+/* TOPO */
+
+.topo{
+
+    width:100%;
+    min-height:50vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:40px 20px;
+
+}
+
+.logo{
+
+    font-size:72px;
+    font-weight:800;
+
+    color:#ff5a00;
+
+}
+
+.subtitulo{
+
+    margin-top:15px;
+
+    font-size:22px;
+
+    color:#666;
+
+}
+
+/* CATEGORIAS */
+
+.categoria{
+
+    width:95%;
+    max-width:1600px;
+
+    margin:auto;
+
+    padding:60px 0;
+
+}
+
+.titulo-categoria{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:40px;
+
+}
+
+/* GRID */
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fill,minmax(320px,1fr));
+
+    gap:35px;
+
+}
+
+/* CARD */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:0.5s;
+
+    background:#fff;
+
+    opacity:0;
+
+    transform:translateY(100px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+/* FOTO */
+
+.card img{
+
+    width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+    transition:0.7s;
+
+    display:block;
+
+}
+
+/* SOMBRA */
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.70),
+    transparent 60%
+    );
+
+    opacity:0;
+
+    transition:0.5s;
+
+    z-index:2;
+
+}
+
+/* INFO */
+
+.info{
+
+    position:absolute;
+
+    left:25px;
+
+    bottom:25px;
+
+    z-index:5;
+
+    color:white;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:0.5s;
+
+}
+
+.info h2{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.info p{
+
+    margin-top:8px;
+
+    font-size:16px;
+
+}
+
+/* PREÇO */
+
+.preco{
+
+    margin-top:12px;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#ff7b00;
+
+}
+
+/* HOVER */
+
+.card:hover{
+
+    transform:scale(1.05);
+
+    z-index:10;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.1);
+
+}
+
+.card:hover::before{
+
+    opacity:1;
+
+}
+
+.card:hover .info{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+.logo-img{
+
+    width:300px;
+
+    max-width:90%;
+
+    object-fit:contain;
+
+}
+
+/* ANIMAÇÃO */
+
+.card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .logo{
+
+        font-size:44px;
+
+    }
+
+    .subtitulo{
+
+        font-size:18px;
+
+    }
+
+    .titulo-categoria{
+
+        font-size:30px;
+
+    }
+
+    .card img{
+
+        height:420px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<section class="topo">
+
+  <img src="Logo bag.jpg" class="logo-img">
+
+    <p class="subtitulo">
+        Catálogo Premium Delivery
+    </p>
+
+</section>
+
+<!-- CATEGORIA 1 -->
+
+<section class="categoria">
+
+    <h2 class="titulo-categoria">
+        Bags Tradicionais
+    </h2>
+
+    <div class="galeria">
+
+        <!-- 11 CARDS -->
+
+        <div class="card"><img src="Couro.jpeg"><div class="info"><h2>Bag 1</h2><p>Alta resistência</p><div class="preco">R$ 149,90</div></div></div>
+
+        <div class="card"><img src="Preta.jpg"><div class="info"><h2>Bag 2</h2><p>Modelo premium</p><div class="preco">R$ 159,90</div></div></div>
+
+        <div class="card"><img src="Isopor.jpeg"><div class="info"><h2>Bag 3</h2><p>Grande capacidade</p><div class="preco">R$ 169,90</div></div></div>
+
+        <div class="card"><img src="Detalhes.jpeg"><div class="info"><h2>Bag 4</h2><p>Acabamento reforçado</p><div class="preco">R$ 179,90</div></div></div>
+
+        <div class="card"><img src="Azul Marinho.jpg"><div class="info"><h2>Bag 5</h2><p>Delivery profissional</p><div class="preco">R$ 189,90</div></div></div>
+
+        <div class="card"><img src="CAMUFLADA 2.jpg"><div class="info"><h2>Bag 6</h2><p>Modelo executivo</p><div class="preco">R$ 199,90</div></div></div>
+
+        <div class="card"><img src="laranja.png"><div class="info"><h2>Bag 7</h2><p>Alta durabilidade</p><div class="preco">R$ 209,90</div></div></div>
+
+        <div class="card"><img src="Rosa.jpg"><div class="info"><h2>Bag 8</h2><p>Estrutura premium</p><div class="preco">R$ 219,90</div></div></div>
+
+        <div class="card"><img src="Verde.png"><div class="info"><h2>Bag 9</h2><p>Modelo reforçado</p><div class="preco">R$ 229,90</div></div></div>
+
+        <div class="card"><img src="Vinho.jpg"><div class="info"><h2>Bag 10</h2><p>Design moderno</p><div class="preco">R$ 239,90</div></div></div>
+
+        <div class="card"><img src="Vermelha.jpg"><div class="info"><h2>Bag 11</h2><p>Entrega premium</p><div class="preco">R$ 249,90</div></div></div>
+
+    </div>
+
+</section>
+
+<!-- CATEGORIA 2 -->
+
+<section class="categoria">
+
+    <h2 class="titulo-categoria">
+        Bags Personalizadas
+    </h2>
+
+    <div class="galeria">
+
+        <!-- 6 CARDS -->
+
+        <div class="card"><img src="Santa.jpeg"><div class="info"><h2>Personalizada 1</h2><p>Sua marca em destaque</p><div class="preco">R$ 259,90</div></div></div>
+
+        <div class="card"><img src="Alça.jpeg"><div class="info"><h2>Personalizada 2</h2><p>Modelo exclusivo</p><div class="preco">R$ 269,90</div></div></div>
+
+        <div class="card"><img src="Dominos.png"><div class="info"><h2>Personalizada 3</h2><p>Ideal para franquias</p><div class="preco">R$ 279,90</div></div></div>
+
+        <div class="card"><img src="Entrego.jpeg"><div class="info"><h2>Personalizada 4</h2><p>Acabamento premium</p><div class="preco">R$ 289,90</div></div></div>
+
+        <div class="card"><img src="Mochilao.jpeg"><div class="info"><h2>Personalizada 5</h2><p>Alta resistência</p><div class="preco">R$ 299,90</div></div></div>
+
+        <div class="card"><img src="Nhfood.jpeg"><div class="info"><h2>Personalizada 6</h2><p>Visual profissional</p><div class="preco">R$ 309,90</div></div></div>
+
+    </div>
+
+</section>
+
+<script>
+
+/* ANIMAÇÃO AO DESCER */
+
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('show');
+
+        }
+
+    });
+
+},{
+    threshold:0.15
+});
+
+cards.forEach((card)=>{
+
+    observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
